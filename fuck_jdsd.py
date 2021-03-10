@@ -203,8 +203,6 @@ def serverchan(flag, message=None):
     response = requests.request("POST", url, headers=headers, data=payload)
 
 
-
-
 if __name__ == '__main__':
     for key in key_list:
         try:
