@@ -18,6 +18,9 @@ jobs:
         uses: actions/setup-python@v3
         with:
           python-version: '3.9'
+          
+      - name: Install packages 
+        run: pip3 install requests json random time
 
       - name: Run the script
         run: python fuck_jdsd.py
