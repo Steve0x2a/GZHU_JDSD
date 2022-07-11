@@ -188,6 +188,9 @@ if __name__ == '__main__':
         flag, info = get_info()
         if not flag:
             raise Exception("登录失败 请验证key")
+            data = {"token": '36e93ed9a2e44e478b9fe30aeff66b81', "title": '经典诵读登录失败', "content": ' '}
+            url = "http://www.pushplus.plus/send/"
+            logger.info(requests.post(url, data=data).text)
         print("{}同学您好,您目前的积分为:{}".format(info['name'],info['total']))
         #签到+2
         signin()
