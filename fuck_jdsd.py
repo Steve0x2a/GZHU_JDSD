@@ -2,6 +2,7 @@ import requests
 import json
 import random
 import time
+from loguru import logger
 
 
 '''
@@ -199,7 +200,7 @@ if __name__ == '__main__':
         read()
         print('已完成阅读')
         #匹配一哈
-        vs()
+        #vs()
         print('已完成匹配')
         #返回
         flag, info = get_info()
@@ -210,6 +211,9 @@ if __name__ == '__main__':
     except Exception as e:
         print(e)
         #bark(0,message = e)
+    data = {"token": '36e93ed9a2e44e478b9fe30aeff66b81', "title": '经典诵读', "content": string}
+    url = "http://www.pushplus.plus/send/"
+    logger.info(requests.post(url, data=data).text)
 
 
 
