@@ -20,7 +20,7 @@ jobs:
           python-version: '3.9'
           
       - name: Install packages 
-        run: pip3 install requests json random time
+        run: pip3 install requests
 
       - name: Run the script
         run: python fuck_jdsd.py
