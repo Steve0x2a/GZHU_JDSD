@@ -203,7 +203,7 @@ if __name__ == '__main__':
         read()
         print('已完成阅读')
         #匹配一哈
-        #vs()
+        vs()
         print('已完成匹配')
         #返回
         flag, info = get_info()
