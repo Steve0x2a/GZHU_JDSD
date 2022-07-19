@@ -214,9 +214,15 @@ if __name__ == '__main__':
     except Exception as e:
         print(e)
         #bark(0,message = e)
-    data = {"token": '36e93ed9a2e44e478b9fe30aeff66b81', "title": '经典诵读', "content": string}
-    url = "http://www.pushplus.plus/send/"
-    logger.info(requests.post(url, data=data).text  
+    if string[0] =="今":
+        data = {"token": '36e93ed9a2e44e478b9fe30aeff66b81', "title": '经典诵读', "content": string}
+        url = "http://www.pushplus.plus/send/"
+        logger.info(requests.post(url, data=data).text)
+    else:
+        data = {"token": '36e93ed9a2e44e478b9fe30aeff66b81', "title": '经典诵读匹配失败', "content": " "}
+        url = "http://www.pushplus.plus/send/"
+        logger.info(requests.post(url, data=data).text)
+        
 
 
-
+    
