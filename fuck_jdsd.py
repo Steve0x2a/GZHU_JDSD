@@ -19,6 +19,7 @@ headers = {
 }
 session.headers = headers
 url = "https://jdsd.gzhu.edu.cn/coctl_gzhu/index_wx.php"
+p= str(os.environ['XUHAO'])
 
 
 def get_info():
@@ -215,11 +216,11 @@ if __name__ == '__main__':
         print(e)
         #bark(0,message = e)
     if string[0] =="今":
-        data = {"token": '36e93ed9a2e44e478b9fe30aeff66b81', "title": '经典诵读', "content": string}
+        data = {"token": p, "title": '经典诵读', "content": string}
         url = "http://www.pushplus.plus/send/"
         logger.info(requests.post(url, data=data).text)
     else:
-        data = {"token": '36e93ed9a2e44e478b9fe30aeff66b81', "title": '经典诵读匹配失败', "content": " "}
+        data = {"token": p, "title": '经典诵读匹配失败', "content": " "}
         url = "http://www.pushplus.plus/send/"
         logger.info(requests.post(url, data=data).text)
         
