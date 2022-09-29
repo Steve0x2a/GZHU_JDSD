@@ -8,7 +8,7 @@ from loguru import logger
 '''
 下方填写key 需抓包  key在更换微信登录后会改变 具体有效期尚未可知
 '''
-key =  'vBQWDMHFyViUfdu3u4zJcWj4kxwNmkEnmHuwL7zmJL1W2M5h/BD8FchBDByqq9nD'
+key =  str(os.environ['key'])
 session = requests.session()
 headers = {
   'Host': 'jdsd.gzhu.edu.cn',
@@ -19,7 +19,7 @@ headers = {
 }
 session.headers = headers
 url = "https://jdsd.gzhu.edu.cn/coctl_gzhu/index_wx.php"
-p= str(os.environ['XUHAO'])
+p= str(os.environ['PUSHPLUS'])
 
 
 def get_info():
