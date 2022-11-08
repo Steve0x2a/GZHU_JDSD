@@ -23,4 +23,7 @@ jobs:
         run: pip3 install requests loguru
 
       - name: Run the script
+        env:
+          KEY: ${{ secrets.KEY }}
+          PUSHPLUS: ${{ secrets.PUSHPLUS }}
         run: python fuck_jdsd.py
