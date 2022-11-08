@@ -209,7 +209,7 @@ if __name__ == '__main__':
         print('已完成匹配')
         #返回
         flag, info = get_info()
-        string = "今日获得:{} 总积分:{}".format(info['today'],info['total'])
+        string = "经典诵读今日获得:{} 总积分:{}".format(info['today'],info['total'])
         print(string)
         #通知 需要填入bark_url
         #bark(1,message = string)
@@ -217,7 +217,7 @@ if __name__ == '__main__':
         print(e)
         #bark(0,message = e)
     if string[0] =="今":
-        data = {"token": p, "title": '经典诵读', "content": string}
+        data = {"token": p, "title": 'string', "content": string}
         url = "http://www.pushplus.plus/send/"
         logger.info(requests.post(url, data=data).text)
     else:
