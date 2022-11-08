@@ -6,6 +6,8 @@
 
 ## 使用方法
 抓取该小程序请求总的key参数, 填入程序key变量内（抓包方法自行解决）
+
+---
 点进Settings——Secrets——Actions的菜单
 
 - 要创建的第一个Secret的Name为KEY，注意KEY要大写
