@@ -20,7 +20,7 @@ headers = {
 }
 session.headers = headers
 url = "https://jdsd.gzhu.edu.cn/coctl_gzhu/index_wx.php"
-p= str(os.environ['PUSHPLUS'])
+p = str(os.environ['PUSHPLUS'])
 
 
 def get_info():
@@ -216,7 +216,7 @@ if __name__ == '__main__':
     except Exception as e:
         print(e)
         #bark(0,message = e)
-    if string[0] =="今":
+    if string[0] =="经":
         data = {"token": p, "title": string, "content": string}
         url = "http://www.pushplus.plus/send/"
         logger.info(requests.post(url, data=data).text)
