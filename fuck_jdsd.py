@@ -217,7 +217,7 @@ if __name__ == '__main__':
         print(e)
         #bark(0,message = e)
     if string[0] =="今":
-        data = {"token": p, "title": 'string', "content": string}
+        data = {"token": p, "title": string, "content": string}
         url = "http://www.pushplus.plus/send/"
         logger.info(requests.post(url, data=data).text)
     else:
