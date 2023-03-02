@@ -20,7 +20,6 @@ headers = {
 }
 session.headers = headers
 url = "https://jdsd.gzhu.edu.cn/coctl_gzhu/index_wx.php"
-p = str(os.environ['PUSHPLUS'])
 
 
 def get_info():
@@ -189,8 +188,9 @@ if __name__ == '__main__':
         #先验证登录
         flag, info = get_info()
         if not flag:
+            p = str(os.environ['PUSHPLUS'])
             raise Exception("登录失败 请验证key")
-            data = {"token": '36e93ed9a2e44e478b9fe30aeff66b81', "title": '经典诵读登录失败', "content": ' '}
+            data = {"token": p, "title": '经典诵读登录失败', "content": ' '}
             url = "http://www.pushplus.plus/send/"
             logger.info(requests.post(url, data=data).text)
         print("{}同学您好,您目前的积分为:{}".format(info['name'],info['total']))
@@ -217,10 +217,12 @@ if __name__ == '__main__':
         print(e)
         #bark(0,message = e)
     if string[0] =="经":
+        p = str(os.environ['PUSHPLUS'])
         data = {"token": p, "title": string, "content": string}
         url = "http://www.pushplus.plus/send/"
         logger.info(requests.post(url, data=data).text)
     else:
+        p = str(os.environ['PUSHPLUS'])
         data = {"token": p, "title": '经典诵读匹配失败', "content": " "}
         url = "http://www.pushplus.plus/send/"
         logger.info(requests.post(url, data=data).text)
