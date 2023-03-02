@@ -37,6 +37,8 @@
 - 创建一个Repository secret，Name是PUSHPLUS，注意PUSHPLUS要大写。
 - Value是pushplus 推送加 的token
 
+## 特别注意
+- 不要重新在小程序中登录账号，否则key值会更改
 
 毕业了没啥风险了放出来交流学习，如引用请标注出处，仅用作学习，不承担任何风险。
 
